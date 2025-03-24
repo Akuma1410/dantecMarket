@@ -2,6 +2,7 @@
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
+using dantecMarket.Modeles;
 using Newtonsoft.Json;
 
 namespace dantecMarket.Services
@@ -34,6 +35,16 @@ namespace dantecMarket.Services
             {
                 return false;
             }
+        }
+        public async Task<List<Categorie>> GetAllCategoriesAsync()
+        {
+            var response = await _httpClient.GetAsync("/api/mobile/allcategoriesParent");
+            if (response.IsSuccessStatusCode)
+            {
+                var json = await response.Content.ReadAsStringAsync();
+                return JsonConvert.DeserializeObject<List<Categorie>>(json);
+            }
+            return new List<Categorie>();
         }
         #endregion
     }
