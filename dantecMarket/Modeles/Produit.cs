@@ -17,17 +17,11 @@ namespace dantecMarket.Modeles
         private double prix;
         private int quantiteDisponible;
         private List<ImageProduit> lesImages;
-        private Categorie laCategorie;
         private string descriptioncourte;
-        private int etoiles;
-        private int nbvotes;
-        private int nbAvis;
-        private int points;
-        private DateTime dateCreation;
         #endregion
 
         #region Constructeurs
-        public Produit(int id, string nomProduit, string description, double prix, int quantiteDisponible, List<ImageProduit> lesImages, Categorie laCategorie, string descriptioncourte, int etoiles, int nbvotes, int nbAvis, int points, DateTime dateCreation)
+        public Produit(int id, string nomProduit, string description, double prix, int quantiteDisponible, List<ImageProduit> lesImages, string descriptioncourte)
         {
             this.id = id;
             this.nomProduit = nomProduit;
@@ -35,13 +29,7 @@ namespace dantecMarket.Modeles
             this.prix = prix;
             this.quantiteDisponible = quantiteDisponible;
             this.lesImages = lesImages;
-            this.laCategorie = laCategorie;
             this.descriptioncourte = descriptioncourte;
-            this.etoiles = etoiles;
-            this.nbvotes = nbvotes;
-            this.nbAvis = nbAvis;
-            this.points = points;
-            this.dateCreation = dateCreation;
         }
         #endregion
 
@@ -59,19 +47,7 @@ namespace dantecMarket.Modeles
         [JsonProperty("lesImages")]
         public List<ImageProduit> LesImages { get => lesImages; set => lesImages = value; }
         [JsonProperty("laCategorie")]
-        public Categorie LaCategorie { get => laCategorie; set => laCategorie = value; }
-        [JsonProperty("descriptioncourte")]
         public string DescriptionCourte { get => descriptioncourte; set => descriptioncourte = value; }
-        [JsonProperty("etoiles")]
-        public int Etoiles { get => etoiles; set => etoiles = value; }
-        [JsonProperty("nbvotes")]
-        public int NbVotes { get => nbvotes; set => nbvotes = value; }
-        [JsonProperty("nbAvis")]
-        public int NbAvis { get => nbAvis; set => nbAvis = value; }
-        [JsonProperty("points")]
-        public int Points { get => points; set => points = value; }
-        [JsonProperty("dateCreation")]
-        public DateTime DateCreation { get => dateCreation; set => dateCreation = value; }
         #endregion
 
         #region methodes

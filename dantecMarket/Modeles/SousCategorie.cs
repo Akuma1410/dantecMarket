@@ -12,13 +12,15 @@ namespace dantecMarket.Modeles
         #region Attributs
         private int id;
         private string nom;
+        private List<Produit> lesProduits;
         #endregion
 
         #region Constructeurs
-        public SousCategorie(int id, string nom)
+        public SousCategorie(int id, string nom, List<Produit> lesProduits)
         {
             this.id = id;
             this.nom = nom;
+            this.lesProduits = lesProduits;
         }
         #endregion
 
@@ -28,10 +30,9 @@ namespace dantecMarket.Modeles
 
         [JsonProperty("nom")]
         public string Nom { get => nom; set => nom = value; }
-        #endregion
 
-        #region methodes
-        
+        [JsonProperty("lesProduits")]
+        public List<Produit> LesProduits { get => lesProduits; set => lesProduits = value; }
         #endregion
     }
 }

@@ -25,7 +25,7 @@ namespace dantecMarket.Vues
             {
                 await DisplayAlert("Succès", "Connexion réussie", "OK");
                 // Naviguez vers la page principale de l'application
-                // Par exemple : Application.Current.MainPage = new MainPage();
+                await Navigation.PushAsync(new VueCategorie());
             }
             else
             {
